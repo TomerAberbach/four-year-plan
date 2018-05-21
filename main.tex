@@ -1,0 +1,453 @@
+% Tomer Aberbach (tomeraberbach@gmail.com, http://tomeraberbach.com https://github.com/TomerADev)
+
+
+% Commands (DO NOT TOUCH!)
+\newcommand\generator[1]{\expandafter\edef\csname #1\endcsname}
+\newcommand\getgen[1]{\csname #1\endcsname}
+\newcommand\linept{0.8pt}
+\newcommand\semester[8]{
+    \FPeval{\result}{0}
+    
+    \ifthenelse{\equal{#4}{\empty}}{\empty}{\FPeval{\result}{result + #4}}
+    \ifthenelse{\equal{#6}{\empty}}{\empty}{\FPeval{\result}{result + #6}}
+    \ifthenelse{\equal{#8}{\empty}}{\empty}{\FPeval{\result}{result + #8}}
+    
+    \generator{#1#2first}{#3&#4}
+    \generator{#1#2second}{#5&#6}
+    \generator{#1#2third}{#7&#8}
+    \semestercontinued{#1}{#2}
+}
+\newcommand\semestercontinued[8]{
+    \ifthenelse{\equal{#4}{\empty}}{\empty}{\FPeval{\result}{result + #4}}
+    \ifthenelse{\equal{#6}{\empty}}{\empty}{\FPeval{\result}{result + #6}}
+    \ifthenelse{\equal{#8}{\empty}}{\empty}{\FPeval{\result}{result + #8}}
+
+    \FPeval{\result}{round(result, 2)}
+    \generator{#1#2fourth}{#3&#4}
+    \generator{#1#2fifth}{#5&#6}
+    \generator{#1#2sixth}{#7&#8}
+    \generator{#1#2total}{\result}
+}
+\renewcommand{\year}[1]{\multirow{7}{*}{\textbf{#1}}&}
+
+
+% Type
+\documentclass{article}
+
+
+% Packages and Formatting
+\usepackage{multirow, tabu, fp, ifthen}
+\usepackage[margin=0.7in]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% START OF SAFE ZONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configurable Options (name, graduation year, and classes)
+\newcommand
+    \name{Tomer Aberbach}
+\newcommand
+    \graduation{2020}
+
+% Placed Out
+\semester
+{po}{}
+{MAT 127}{1.00}
+{PHY 201}{1.00}
+{SPA 101}{0.00}
+{SPA 102}{0.00}
+{SPA 103}{0.00}
+{}{}
+
+
+% Freshmen
+    % Fall
+    \semester
+    {freshmen}{fall}
+    {CSC 099}{0.00}
+    {CSC 220}{1.00}
+    {FSP 163}{1.00}
+    {LIT 280}{1.00}
+    {IMM 130}{1.00}
+    {}{}
+    
+    % Winter
+    \semester
+    {freshmen}{winter}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    
+    % Spring
+    \semester
+    {freshmen}{spring}
+    {CSC 230}{1.00}
+    {CSC 270}{1.00}
+    {CSC 298}{0.50}
+    {MAT 128}{1.00}
+    {IMM 110}{1.00}
+    {}{}
+    
+    % Summer
+    \semester
+    {freshmen}{summer}
+    {MUSE}{0.00}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+
+% Sophomore
+    % Fall
+    \semester
+    {sophomore}{fall}
+    {CSC 199}{0.25}
+    {CSC 325}{1.00}
+    {CSC 335}{1.00}
+    {CSC 298}{0.25}
+    {MAT 229}{1.00}
+    {WLC 215}{1.00}
+    
+    % Winter
+    \semester
+    {sophomore}{winter}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    
+    % Spring
+    \semester
+    {sophomore}{spring}
+    {CSC 345}{1.00}
+    {CSC 315}{1.00}
+    {STA 215}{1.00}
+    {PHL 100}{1.00}
+    {}{}
+    {}{}
+    
+    % Summer
+    \semester
+    {sophomore}{summer}
+    {D\&B}{0.00}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+
+% Junior
+    % Fall
+    \semester
+    {junior}{fall}
+    {CSC 415}{1.00}
+    {MAT 205}{1.00}
+    {SOC 101}{1.00}
+    {HIS 100}{1.00}
+    {}{}
+    {}{}
+    
+    % Winter
+    \semester
+    {junior}{winter}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    
+    % Spring
+    \semester
+    {junior}{spring}
+    {CSC 299}{0.25}
+    {CSC 445}{1.00}
+    {CSC ???}{1.00}
+    {MAT 370}{1.00}
+    {BIO 201}{1.00}
+    {}{}
+    
+    % Summer
+    \semester
+    {junior}{summer}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+
+% Senior
+    % Fall
+    \semester
+    {senior}{fall}
+    {CSC 399}{1.00}
+    {CSC 380}{1.00}
+    {MAT 315}{1.00}
+    {PHY 161}{1.00}
+    {Elective}{1.00}
+    {}{}
+    
+    % Winter
+    \semester
+    {senior}{winter}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    
+    % Spring
+    \semester
+    {senior}{spring}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    
+    % Summer
+    \semester
+    {senior}{summer}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+    {}{}
+
+% Additional Notes
+\newcommand
+\additional{Majoring in Computer Science and minoring in Mathematics.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF SAFE ZONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Document
+\begin{document}
+    \begin{center}
+        \huge \textbf{Four Year Plan}
+    \end{center}
+    
+    \smallskip
+    
+    {\large\noindent
+        \textbf{Name: \name}\\
+        \textbf{Graduation Date: \graduation}
+    }
+
+    \smallskip
+
+    \begin{center}
+        \begin{tabu}{|[\linept] c |[\linept] c |[\linept]}
+            \cline{1-2}
+            \multicolumn{2}{|[\linept] c |[\linept]}{\textbf{Placed Out}}\\\cline{1-2}
+            \pofirst\\\cline{1-2}
+            \posecond\\\cline{1-2}
+            \pothird\\\cline{1-2}
+            \pofourth\\\cline{1-2}
+            \pofifth\\\cline{1-2}
+            \posixth\\\cline{1-2}
+            \textbf{Total}&\textbf{\pototal}\\\cline{1-2}
+        \end{tabu}
+        \quad
+        \begin{tabu}{|[\linept] c |[\linept] c |[\linept] c |[\linept] c |[\linept] c |[\linept] c |[\linept] c |[\linept] c |[\linept] c |[\linept]}
+            \tabucline[\linept]{1-9}
+                \textbf{Year}&
+                \multicolumn{2}{ c |[\linept]}{\textbf{Fall}}&
+                \multicolumn{2}{ c |[\linept]}{\textbf{Winter}}&
+                \multicolumn{2}{ c |[\linept]}{\textbf{Spring}}&
+                \multicolumn{2}{ c |[\linept]}{\textbf{Summer}}
+            \\
+            \tabucline[\linept]{1-9}
+                \year{2016-2017}
+                \freshmenfallfirst&
+                \freshmenwinterfirst&
+                \freshmenspringfirst&
+                \freshmensummerfirst
+            \\
+            \cline{2-9}&
+                \freshmenfallsecond&
+                \freshmenwintersecond&
+                \freshmenspringsecond&
+                \freshmensummersecond
+            \\
+            \cline{2-9}&
+                \freshmenfallthird&
+                \freshmenwinterthird&
+                \freshmenspringthird&
+                \freshmensummerthird
+            \\
+            \cline{2-9}&
+                \freshmenfallfourth&
+                \freshmenwinterfourth&
+                \freshmenspringfourth&
+                \freshmensummerfourth
+            \\
+            \cline{2-9}&
+                \freshmenfallfifth&
+                \freshmenwinterfifth&
+                \freshmenspringfifth&
+                \freshmensummerfifth
+            \\
+            \cline{2-9}&
+                \freshmenfallsixth&
+                \freshmenwintersixth&
+                \freshmenspringsixth&
+                \freshmensummersixth
+            \\
+            \cline{2-9}&
+                \textbf{Total}&\textbf{\freshmenfalltotal}&
+                \textbf{Total}&\textbf{\freshmenwintertotal}&
+                \textbf{Total}&\textbf{\freshmenspringtotal}&
+                \textbf{Total}&\textbf{\freshmensummertotal}
+            \\
+            \tabucline[\linept]{1-9}
+                \year{2017-2018}
+                \sophomorefallfirst&
+                \sophomorewinterfirst&
+                \sophomorespringfirst&
+                \sophomoresummerfirst
+            \\
+            \cline{2-9}&
+                \sophomorefallsecond&
+                \sophomorewintersecond&
+                \sophomorespringsecond&
+                \sophomoresummersecond
+            \\
+            \cline{2-9}&
+                \sophomorefallthird&
+                \sophomorewinterthird&
+                \sophomorespringthird&
+                \sophomoresummerthird
+            \\
+            \cline{2-9}&
+                \sophomorefallfourth&
+                \sophomorewinterfourth&
+                \sophomorespringfourth&
+                \sophomoresummerfourth
+            \\
+            \cline{2-9}&
+                \sophomorefallfifth&
+                \sophomorewinterfifth&
+                \sophomorespringfifth&
+                \sophomoresummerfifth
+            \\
+            \cline{2-9}&
+                \sophomorefallsixth&
+                \sophomorewintersixth&
+                \sophomorespringsixth&
+                \sophomoresummersixth
+            \\
+            \cline{2-9}&
+                \textbf{Total}&\textbf{\sophomorefalltotal}&
+                \textbf{Total}&\textbf{\sophomorewintertotal}&
+                \textbf{Total}&\textbf{\sophomorespringtotal}&
+                \textbf{Total}&\textbf{\sophomoresummertotal}
+            \\
+            \tabucline[\linept]{1-9}
+                \year{2018-2019}
+                \juniorfallfirst&
+                \juniorwinterfirst&
+                \juniorspringfirst&
+                \juniorsummerfirst
+            \\
+            \cline{2-9}&
+                \juniorfallsecond&
+                \juniorwintersecond&
+                \juniorspringsecond&
+                \juniorsummersecond
+            \\
+            \cline{2-9}&
+                \juniorfallthird&
+                \juniorwinterthird&
+                \juniorspringthird&
+                \juniorsummerthird
+            \\
+            \cline{2-9}&
+                \juniorfallfourth&
+                \juniorwinterfourth&
+                \juniorspringfourth&
+                \juniorsummerfourth
+            \\
+            \cline{2-9}&
+                \juniorfallfifth&
+                \juniorwinterfifth&
+                \juniorspringfifth&
+                \juniorsummerfifth
+            \\
+            \cline{2-9}&
+                \juniorfallsixth&
+                \juniorwintersixth&
+                \juniorspringsixth&
+                \juniorsummersixth
+            \\
+            \cline{2-9}&
+                \textbf{Total}&\textbf{\juniorfalltotal}&
+                \textbf{Total}&\textbf{\juniorwintertotal}&
+                \textbf{Total}&\textbf{\juniorspringtotal}&
+                \textbf{Total}&\textbf{\juniorsummertotal}
+            \\
+            \tabucline[\linept]{1-9}
+                \year{2019-2020}
+                \seniorfallfirst&
+                \seniorwinterfirst&
+                \seniorspringfirst&
+                \seniorsummerfirst
+            \\
+            \cline{2-9}&
+                \seniorfallsecond&
+                \seniorwintersecond&
+                \seniorspringsecond&
+                \seniorsummersecond
+            \\
+            \cline{2-9}&
+                \seniorfallthird&
+                \seniorwinterthird&
+                \seniorspringthird&
+                \seniorsummerthird
+            \\
+            \cline{2-9}&
+                \seniorfallfourth&
+                \seniorwinterfourth&
+                \seniorspringfourth&
+                \seniorsummerfourth
+            \\
+            \cline{2-9}&
+                \seniorfallfifth&
+                \seniorwinterfifth&
+                \seniorspringfifth&
+                \seniorsummerfifth
+            \\
+            \cline{2-9}&
+                \seniorfallsixth&
+                \seniorwintersixth&
+                \seniorspringsixth&
+                \seniorsummersixth
+            \\
+            \cline{2-9}&
+                \textbf{Total}&\textbf{\seniorfalltotal}&
+                \textbf{Total}&\textbf{\seniorwintertotal}&
+                \textbf{Total}&\textbf{\seniorspringtotal}&
+                \textbf{Total}&\textbf{\seniorsummertotal}
+            \\\tabucline[\linept]{1-9}
+        \end{tabu}
+        
+        \bigskip
+        
+        \FPeval{\result}{round(\pototal + \freshmenfalltotal + \freshmenwintertotal + \freshmenspringtotal + \freshmensummertotal + \sophomorefalltotal + \sophomorewintertotal + \sophomorespringtotal + \sophomoresummertotal + \juniorfalltotal + \juniorwintertotal + \juniorspringtotal + \juniorsummertotal + \seniorfalltotal + \seniorwintertotal + \seniorspringtotal + \seniorsummertotal, 2)}
+        
+        {\large \textbf{Total: \result}}
+    \end{center}
+    
+    \noindent\textbf{Additional Notes:}\\
+    \noindent\additional
+\end{document}
+
