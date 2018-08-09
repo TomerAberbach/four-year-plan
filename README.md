@@ -28,4 +28,4 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 ## License
 
 Copyright © 2018 [Tomer Aberbach](https://github.com/TomerADev)
-Released under the [MIT license](https://github.com/TomerADev/broken-record/blob/master/LICENSE).
+Released under the [MIT license](https://github.com/TomerADev/four-year-plan/blob/master/LICENSE).
