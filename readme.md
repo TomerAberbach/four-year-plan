@@ -16,4 +16,4 @@ Edit the command arguments in `main.tex` and then use a tool such as [pdftex](ht
 
 ## License
 
-[MIT](https://github.com/TomerAberbach/four-year-plan/blob/master/license) © [Tomer Aberbach](https://github.com/TomerAberbach)
+[MIT](https://github.com/TomerAberbach/four-year-plan/blob/main/license) © [Tomer Aberbach](https://github.com/TomerAberbach)
