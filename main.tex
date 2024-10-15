@@ -1,4 +1,4 @@
-% Tomer Aberbach (tomeraberbach@gmail.com, https://tomeraberba.ch, https://github.com/TomerAberbach)
+% Tomer Aberbach (tomer@aberba.ch, https://tomeraberba.ch, https://github.com/TomerAberbach)
 
 
 % Commands (DO NOT TOUCH!)
@@ -7,11 +7,11 @@
 \newcommand\linept{0.8pt}
 \newcommand\semester[8]{
     \FPeval{\result}{0}
-    
+
     \ifthenelse{\equal{#4}{\empty}}{\empty}{\FPeval{\result}{result + #4}}
     \ifthenelse{\equal{#6}{\empty}}{\empty}{\FPeval{\result}{result + #6}}
     \ifthenelse{\equal{#8}{\empty}}{\empty}{\FPeval{\result}{result + #8}}
-    
+
     \generator{#1#2first}{#3&#4}
     \generator{#1#2second}{#5&#6}
     \generator{#1#2third}{#7&#8}
@@ -69,7 +69,7 @@
     {LIT 280}{1.00}
     {IMM 130}{1.00}
     {}{}
-    
+
     % Winter
     \semester
     {freshmen}{winter}
@@ -79,7 +79,7 @@
     {}{}
     {}{}
     {}{}
-    
+
     % Spring
     \semester
     {freshmen}{spring}
@@ -89,7 +89,7 @@
     {MAT 128}{1.00}
     {IMM 110}{1.00}
     {}{}
-    
+
     % Summer
     \semester
     {freshmen}{summer}
@@ -110,7 +110,7 @@
     {CSC 298}{0.25}
     {MAT 229}{1.00}
     {WLC 215}{1.00}
-    
+
     % Winter
     \semester
     {sophomore}{winter}
@@ -120,7 +120,7 @@
     {}{}
     {}{}
     {}{}
-    
+
     % Spring
     \semester
     {sophomore}{spring}
@@ -130,7 +130,7 @@
     {PHL 100}{1.00}
     {}{}
     {}{}
-    
+
     % Summer
     \semester
     {sophomore}{summer}
@@ -151,7 +151,7 @@
     {HIS 100}{1.00}
     {}{}
     {}{}
-    
+
     % Winter
     \semester
     {junior}{winter}
@@ -161,7 +161,7 @@
     {}{}
     {}{}
     {}{}
-    
+
     % Spring
     \semester
     {junior}{spring}
@@ -171,7 +171,7 @@
     {CSC 470}{1.00}
     {CSC 498}{1.00}
     {MAT 370}{1.00}
-    
+
     % Summer
     \semester
     {junior}{summer}
@@ -192,7 +192,7 @@
     {BIO 201}{1.00}
     {PHY 120}{1.00}
     {}{}
-    
+
     % Winter
     \semester
     {senior}{winter}
@@ -202,7 +202,7 @@
     {}{}
     {}{}
     {}{}
-    
+
     % Spring
     \semester
     {senior}{spring}
@@ -212,7 +212,7 @@
     {}{}
     {}{}
     {}{}
-    
+
     % Summer
     \semester
     {senior}{summer}
@@ -235,9 +235,9 @@
     \begin{center}
         \huge \textbf{Four Year Plan}
     \end{center}
-    
+
     \smallskip
-    
+
     {\large\noindent
         \textbf{Name: \name}\\
         \textbf{Graduation Date: \graduation}
@@ -439,15 +439,14 @@
                 \textbf{Total}&\textbf{\seniorsummertotal}
             \\\tabucline[\linept]{1-9}
         \end{tabu}
-        
+
         \bigskip
-        
+
         \FPeval{\result}{round(\pototal + \freshmenfalltotal + \freshmenwintertotal + \freshmenspringtotal + \freshmensummertotal + \sophomorefalltotal + \sophomorewintertotal + \sophomorespringtotal + \sophomoresummertotal + \juniorfalltotal + \juniorwintertotal + \juniorspringtotal + \juniorsummertotal + \seniorfalltotal + \seniorwintertotal + \seniorspringtotal + \seniorsummertotal, 2)}
-        
+
         {\large \textbf{Total: \result}}
     \end{center}
-    
+
     \noindent\textbf{Additional Notes:}\\
     \noindent\additional
 \end{document}
-
